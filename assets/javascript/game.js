@@ -4,14 +4,15 @@ var computerLetter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"
 var winsCount = 0;
 var lossesCount = 0;
 var guessesLeftCount = 9;
-var guessedLetters = "";
+var userGuesses = [];
 
 resetGame();
 
 
 //creates a function that executes tasks when the user presses a key 
 var userGuess = document.onkeyup = function (event) {
-  var userGuess = event.key;
+var userGuess = event.key;
+userGuesses.push(userGuess);
 
 if (userGuess === computerChoice) {
     win();
@@ -25,13 +26,18 @@ else if (guessesLeftCount - 1 === 0) {
 var wins = document.getElementById("wins");
 var losses = document.getElementById("losses");
 var guessesLeft = document.getElementById("guessesLeft");
-var userChoice = document.getElementById("userChoice");
 wins.textContent = "Wins: " + winsCount;
 losses.textContent = "Losses: " + lossesCount;
 guessesLeft.textContent = "Guesses Left: " + guessesLeftCount;
-userChoice.textContent = "Your Guesses So Far: " + userGuess;
-console.log(userChoice.textContent);
+
+var userChoice = document.getElementById("userChoice");
+userChoice.textContent = "Your Guesses So Far: " + userGuesses.join(', ');
+
+
+
 };
+
+
 
 function win() {
     winsCount++;
