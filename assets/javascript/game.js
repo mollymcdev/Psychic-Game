@@ -48,7 +48,7 @@ function fail() {
 }
 
 function resetGame() {
-    guessesLeftCount = 9;
+    guessesLeftCount = 10;
     guessedLetters = "";
     computerChoice = computerLetter[Math.floor(Math.random() * computerLetter.length)];
         console.log("Letter to Guess: " + computerChoice);

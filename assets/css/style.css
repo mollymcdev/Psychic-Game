@@ -1,0 +1,26 @@
+body { 
+    background: url(../images/background.jpg);
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    font-family: 'Charmonman', cursive;
+    font-size: 60px;
+    margin: 0;
+}
+
+h3 {
+    margin-top: 10px;
+    text-align: center;
+    color: #fff;
+    font-family: 'Charmonman', cursive;
+    font-size: 20px;
+}
+
+p {
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding-left: 50px;
+}
