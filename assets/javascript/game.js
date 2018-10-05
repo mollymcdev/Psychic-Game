@@ -11,27 +11,27 @@ resetGame();
 
 //creates a function that executes tasks when the user presses a key 
 var userGuess = document.onkeyup = function (event) {
-var userGuess = event.key;
-userGuesses.push(userGuess);
+    var userGuess = event.key;
+    userGuesses.push(userGuess);
 
-if (userGuess === computerChoice) {
-    win();
-}
-else if (guessesLeftCount - 1 === 0) {
-    lose();
-  } else {
-    fail();
-  }
+    if (userGuess === computerChoice) {
+        win();
+    }
+    else if (guessesLeftCount - 1 === 0) {
+        lose();
+    } else {
+        fail();
+    }
 
-var wins = document.getElementById("wins");
-var losses = document.getElementById("losses");
-var guessesLeft = document.getElementById("guessesLeft");
-wins.textContent = "Wins: " + winsCount;
-losses.textContent = "Losses: " + lossesCount;
-guessesLeft.textContent = "Guesses Left: " + guessesLeftCount;
+    var wins = document.getElementById("wins");
+    var losses = document.getElementById("losses");
+    var guessesLeft = document.getElementById("guessesLeft");
+    wins.textContent = "Wins: " + winsCount;
+    losses.textContent = "Losses: " + lossesCount;
+    guessesLeft.textContent = "Guesses Left: " + guessesLeftCount;
 
-var userChoice = document.getElementById("userChoice");
-userChoice.textContent = "Your Guesses So Far: " + userGuesses.join(', ');
+    var userChoice = document.getElementById("userChoice");
+    userChoice.textContent = "Your Guesses So Far: " + userGuesses.join(', ');
 
 
 
@@ -44,7 +44,7 @@ function win() {
     resetGame();
 }
 
-function lose(){
+function lose() {
     lossesCount++;
     resetGame();
 }
@@ -57,12 +57,12 @@ function resetGame() {
     guessesLeftCount = 10;
     guessedLetters = "";
     computerChoice = computerLetter[Math.floor(Math.random() * computerLetter.length)];
-        console.log("Letter to Guess: " + computerChoice);
+    console.log("Letter to Guess: " + computerChoice);
 }
 
 
 
 
 
-    
+
 
