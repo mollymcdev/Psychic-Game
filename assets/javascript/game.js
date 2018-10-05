@@ -16,9 +16,11 @@ var userGuess = document.onkeyup = function (event) {
 
     if (userGuess === computerChoice) {
         win();
+        resetGame();
     }
     else if (guessesLeftCount - 1 === 0) {
         lose();
+        resetGame();
     } else {
         fail();
     }
@@ -29,7 +31,6 @@ var userGuess = document.onkeyup = function (event) {
     wins.textContent = "Wins: " + winsCount;
     losses.textContent = "Losses: " + lossesCount;
     guessesLeft.textContent = "Guesses Left: " + guessesLeftCount;
-
     var userChoice = document.getElementById("userChoice");
     userChoice.textContent = "Your Guesses So Far: " + userGuesses.join(', ');
 
@@ -55,7 +56,7 @@ function fail() {
 
 function resetGame() {
     guessesLeftCount = 10;
-    guessedLetters = "";
+    userGuesses = [];
     computerChoice = computerLetter[Math.floor(Math.random() * computerLetter.length)];
     console.log("Letter to Guess: " + computerChoice);
 }
